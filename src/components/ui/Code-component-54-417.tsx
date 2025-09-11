@@ -4,8 +4,7 @@ import {
   Timer, ArrowRight, Search, FileText, BookOpen, Mic, MicOff,
   Shield, AlertTriangle, CheckCircle, HelpCircle, Info, Star,
   Bookmark, Pin, Calendar, Share2, Link2, Upload, Download, Copy,
-  Filter, Settings, Home, ShieldCheck, PiggyBank, CreditCard, Coins,
-  Route, Users, Navigation
+  Filter, Settings, Home, ShieldCheck, PiggyBank, CreditCard, Coins
 } from "lucide-react";
 
 const ICONS = {
@@ -37,9 +36,6 @@ const ICONS = {
   "piggy-bank": PiggyBank,
   "credit-card": CreditCard,
   "coins": Coins,
-  "route": Route,
-  "users": Users,
-  "navigation": Navigation,
 } as const;
 
 export type IconName = keyof typeof ICONS;
