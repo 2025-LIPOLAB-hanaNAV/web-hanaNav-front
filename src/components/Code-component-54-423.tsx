@@ -156,10 +156,8 @@ export function HomePage({ onSearch, onQuestionClick, onPresetClick }: HomePageP
         {/* Popular Questions */}
         <section>
           <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-bold flex items-center gap-3">
-              <Icon name="star" size={28} className="text-primary" />
-              인기 방문지
-            </h2>
+            <Icon name="arrow-right" size={24} className="text-primary" />
+            <h2 className="text-2xl font-bold">인기 방문지</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -181,7 +179,9 @@ export function HomePage({ onSearch, onQuestionClick, onPresetClick }: HomePageP
                       </span>
                     </div>
                   </div>
-
+                  <div className="flex justify-end pt-2">
+                    <Icon name="arrow-right" size={20} className="text-muted-foreground" />
+                  </div>
                 </div>
               </Card>
             ))}
@@ -191,10 +191,8 @@ export function HomePage({ onSearch, onQuestionClick, onPresetClick }: HomePageP
         {/* Preset Routes */}
         <section>
           <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-bold flex items-center gap-3">
-              <Icon name="route" size={28} className="text-primary" />
-              상황별 프리셋 경로
-            </h2>
+            <Icon name="arrow-right" size={24} className="text-primary" />
+            <h2 className="text-2xl font-bold">상황별 프리셋 경로</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -229,7 +227,8 @@ export function HomePage({ onSearch, onQuestionClick, onPresetClick }: HomePageP
                       </div>
                     </div>
                   </div>
-
+                  
+                  <Icon name="arrow-right" size={20} className="text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
               </Card>
             ))}
@@ -239,10 +238,8 @@ export function HomePage({ onSearch, onQuestionClick, onPresetClick }: HomePageP
         {/* Department Shortcuts */}
         <section className="bg-[rgba(0,0,0,0)]">
           <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-bold flex items-center gap-3">
-              <Icon name="users" size={28} className="text-primary" />
-              부서별 자주 찾는 항목
-            </h2>
+            <Icon name="settings" size={24} className="text-primary" />
+            <h2 className="text-2xl font-bold">부서별 자주 찾는 항목</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
