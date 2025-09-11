@@ -22,6 +22,8 @@ export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [selectedEvidence, setSelectedEvidence] = useState<EvidenceItem | null>(null);
   const [showEvidencePanel, setShowEvidencePanel] = useState(false);
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [searchFiles, setSearchFiles] = useState<File[]>([]);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
@@ -29,16 +31,22 @@ export default function App() {
   };
 
   const handleSearch = (query: string, files?: File[]) => {
+    setSearchQuery(query);
+    setSearchFiles(files || []);
     setCurrentView('chat');
     console.log('Search:', query, files);
   };
 
   const handleQuestionClick = (question: string) => {
+    setSearchQuery(question);
+    setSearchFiles([]);
     setCurrentView('chat');
     console.log('Question clicked:', question);
   };
 
   const handlePresetClick = (preset: any) => {
+    setSearchQuery(preset.title || preset.name || '');
+    setSearchFiles([]);
     setCurrentView('chat');
     console.log('Preset clicked:', preset);
   };
@@ -63,6 +71,12 @@ export default function App() {
         return (
           <ChatPage
             onEvidenceClick={handleEvidenceClick}
+            initialQuery={searchQuery}
+            initialFiles={searchFiles}
+            onQueryProcessed={() => {
+              setSearchQuery('');
+              setSearchFiles([]);
+            }}
           />
         );
       case 'saved':
