@@ -58,5 +58,12 @@
     server: {
       port: 3000,
       open: true,
+      proxy: {
+        '/api': {
+          target: 'https://proxy-hananav-production.up.railway.app',
+          changeOrigin: true,
+          secure: true,
+        },
+      },
     },
   });
